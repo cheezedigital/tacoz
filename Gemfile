@@ -10,13 +10,14 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'font-awesome-sass'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
-gem 'kaminari' #pagination 
+gem 'kaminari' #pagination
 gem 'mini_magick'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'thin'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'devise'
 
 group :development do
   gem 'pry-rails'
