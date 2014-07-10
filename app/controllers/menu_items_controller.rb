@@ -5,8 +5,8 @@ class MenuItemsController < ApplicationController
   end
 
   def vegetarian
-    @items = MenuItem.vegetarian
-    render :index 
+    @items = MenuItem.vegetarian.page(params[:page]).per(8)
+    render :index
   end
 
   def show
