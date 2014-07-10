@@ -1,0 +1,5 @@
+<h1><%= @menu_item.name %></h1>
+<h2><%= @menu_item.price %></h2>
+<p><%= @menu_item.description %></p>
+
+<%= link_to 'Destroy Menu Item', [:admin, @menu_item], method: :delete %>

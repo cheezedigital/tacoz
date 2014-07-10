@@ -17,6 +17,10 @@ class MenuItemPictureUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [80, 80]
   end
 
+  version :extra_samll do
+    process resize_to_fill: [100, 100]
+  end
+
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
