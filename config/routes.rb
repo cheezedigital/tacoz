@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post '/contact-submit' => 'site#contact_submit', as: :submit_contact
   resources :menu_items, only: [:index, :show, :vegetarian], path: 'our-food'
   get '/our-vegetarian-food' => 'menu_items#vegetarian'
-  namespace :admin do
+  namespace :admin do # is only for organziation 
     get '/' => 'base#index'
 
     resources :menu_items
