@@ -16,6 +16,16 @@
   <%= f.label :picture %>
   <%= f.file_field :picture %>
 
+  <%= f.fields_for(:ingredients) do |ingredient_form| %>
+    <div class="form-group">
+      <%= ingredient_form.text_field(:name, placeholder: 'Name') %>
+    </div>
+    <div class="form-group">
+      <%= ingredient_form.text_field(:calories, placeholder: 'Calories') %>
+    </div>
+  <% end %>
+
+
   <%= f.submit%>
 
 <% end %>
