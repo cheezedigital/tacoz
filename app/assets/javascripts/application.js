@@ -3,6 +3,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require gmaps
+//= require jquery_nested_form
 //= require_tree .
 
 $(function() {

@@ -1,5 +1,5 @@
 class Location < ActiveRecord::Base
-
+  has_many :employees 
   geocoded_by :address
   after_validation :geocode
 

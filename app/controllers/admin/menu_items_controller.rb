@@ -45,6 +45,6 @@ class Admin::MenuItemsController < AdminController
 
   def menu_item_params
     params.require(:menu_item).permit(:name, :price, :description, :vegetarian, :picture,
-    ingredients_attributes: [:name, :calories])
+    ingredients_attributes: [:name, :calories, :id, :_destroy])
   end
 end
