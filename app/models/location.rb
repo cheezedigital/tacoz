@@ -1,9 +1,14 @@
 class Location < ActiveRecord::Base
+  include PgSearch
+    multisearchable against: [:street_address, :city, :state]
+
   geocoded_by :address
   after_validation :geocode
 
   has_many :employees
-  accepts_nested_attributes_for :employees, allow_destroy: true, reject_if: :has_blank_attributes
+  accepts_nested_attributes_for :employees,
+                                allow_destroy: true,
+                                reject_if: :has_blank_attributes
 
  after_initialize do
    if employees.empty?
