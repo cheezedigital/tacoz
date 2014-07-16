@@ -1,0 +1,17 @@
+<h3>Employees at this Location</h3>
+<% @location.employees.each do |employee| %>
+ <p><%= employee.name %></p>
+ <p><%= employee.badge_number %></p>
+<% end %>
+
+
+<div class="row">
+ <div class="col-sm-8 col-sm-offset-2">
+   <div id="map" data-lat="<%= @location.latitude %>" data-lon="<%= @location.longitude %>" data-address="<%= @location.address %>">
+
+   </div>
+ </div>
+</div>
+
+<%= link_to 'Destroy Location', [:admin, @location], method: :delete %> |
+<%= link_to 'Edit Location/Employee', edit_admin_location_path %>

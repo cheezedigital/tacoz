@@ -21,20 +21,22 @@ class Admin::LocationsController < AdminController
   end
 
   def edit
-
+    @location = Location.find(params[:id])
   end
 
   def update
+    @location = Location.find(params[:id])
     if @location.update_attributes(location_params)
-      redirect_to admin_locations_path
+      redirect_to admin_location_path
     else
-      render :new
+      render :edit
     end
   end
 
   def destroy
+    @location = Location.find(params[:id])
     @location.destroy
-    redirect_to admin_locaitons_path 
+    redirect_to admin_locations_path
   end
 
   private
