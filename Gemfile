@@ -24,7 +24,7 @@ gem 'thin'
 gem 'turbolinks'
 gem 'twitter'
 gem 'uglifier', '>= 1.3.0'
-gem 'devise'
+
 
 group :development do
   gem 'pry-rails'
