@@ -21,16 +21,16 @@ module Locatable
   def as_indexed_json(options={})
       as_json(
         only: [
-          :street_address
-          :street_address2
+          :street_address,
+          :street_address2,
           :city,
           :state,
           :zip
         ],
         methods: [
-          :coordinates
+          :coordinates,
           :address
-        ]
+        ],
       )
   end
 
@@ -40,7 +40,7 @@ module Locatable
       definition = {
         query: {
           query_string: {
-            query: params[:q],blank? ? '*' : params[:q],
+            query: params[:q].blank? ? '*' : params[:q],
             default_operator: 'AND'
           }
         }
