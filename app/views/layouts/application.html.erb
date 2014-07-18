@@ -16,7 +16,11 @@
         <div id="col-sm-8">
           <%= render('shared/topsearch')%>
           <br>
-          <%= link_to('Login with Twitter', user_omniauth_authorize_path(:twitter))%>
+          <% if user_signed_in? %>
+            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+          <% else %>
+            <%= link_to('Login with Twitter', user_omniauth_authorize_path(:twitter))%>
+         <% end %>
         </div>
       </div>
       <%= render('shared/topnav') %>
