@@ -1,6 +1,6 @@
 class Location < ActiveRecord::Base
-  include PgSearch
-    multisearchable against: [:street_address, :city, :state]
+  include Locatable
+
 
   geocoded_by :address
   after_validation :geocode
@@ -21,6 +21,9 @@ class Location < ActiveRecord::Base
     "#{street_address} #{street_address2}, #{city}, #{state} #{zip}, US"
   end
 
+  def add_employee
+    employees.build if employee.empty?
+  end
   private
 
    def has_blank_attributes(employee_attrs)
