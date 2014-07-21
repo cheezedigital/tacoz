@@ -13,7 +13,7 @@ class SiteController < ApplicationController
   end
 
   def contact_submit
-    ContactMailer.contact_request(params).deliver
-    redirect_to root_path, notice: 'Thanks for contacting us!'  
+    ContactMailer.delay.contact_request(params)
+    redirect_to root_path, notice: 'Thanks for contacting us!'
   end
 end
