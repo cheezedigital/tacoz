@@ -20,6 +20,8 @@ gem 'omniauth-twitter'
 gem 'pg'
 gem 'pg_search'
 gem 'sass-rails', '~> 4.0.3'
+gem 'sidekiq'
+gem 'sinatra', require: nil
 gem 'thin'
 gem 'turbolinks'
 gem 'twitter'
