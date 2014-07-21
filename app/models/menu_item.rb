@@ -1,4 +1,5 @@
 class MenuItem < ActiveRecord::Base
+  include Indexable 
   include PgSearch
   # multisearchable against: [:name, :description], associated_against: {
   #   ingredients: [:name]
@@ -8,7 +9,7 @@ class MenuItem < ActiveRecord::Base
   #    ingredients: [:name]
   # }
 
-  multisearchable against: [:name, :description, :ingredient_names]
+  #multisearchable against: [:name, :description, :ingredient_names]
 
 
   mount_uploader :picture, MenuItemPictureUploader
@@ -37,4 +38,5 @@ class MenuItem < ActiveRecord::Base
   def has_blank_attributes(ingredient_attrs)
     ingredient_attrs['name'].blank?
   end
+
 end
