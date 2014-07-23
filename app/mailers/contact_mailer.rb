@@ -5,4 +5,9 @@ class ContactMailer < ActionMailer::Base
     @params = params
     mail(to: 'admin@tacoz.com', subject: 'New Contact Request')
   end
+
+  def send_report(stats_hash)
+    @stats_hash = stats_hash
+    mail(to: 'me@tacoz.com', subject: 'Daily Report')
+  end
 end
