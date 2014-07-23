@@ -6,6 +6,7 @@ gem 'rails', '4.1.1'
 # Application gems
 gem 'bootstrap-sass'
 gem 'carrierwave'
+gem 'clockwork'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'font-awesome-sass'
